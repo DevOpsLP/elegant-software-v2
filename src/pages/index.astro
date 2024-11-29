@@ -1,0 +1,31 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero";
+import WhyUs from "@components/Whyus";
+import Services from "@components/Services";
+import { CTA } from "@components/CTA";
+import ContactForm from "@components/Contact";
+---
+<MainLayout>
+  {/* Hero Section */}
+  <section id="home" class=" h-screen w-full">
+    <Hero client:only="react" />
+  </section>
+
+  {/* Why Us Section */}
+  <section id="why-us" class=" h-screen w-full overflow-hidden bg-primary-500 flex items-center justify-center relative">
+    <WhyUs client:only="react" />
+  </section>
+  {/* Services Section */}
+  <section  class="w-full">
+    <CTA />
+  </section>
+  <section id="services" class="relative  min-h-screen py-16 bg-primary-500 flex items-center justify-center overflow-hidden">
+    <Services />
+  </section>
+  
+  {/* Contact Section */}
+  <section id="contact" class=" relative min-h-screen flex justify-center items-center mx-auto">
+    <ContactForm /> 
+  </section>
+</MainLayout>

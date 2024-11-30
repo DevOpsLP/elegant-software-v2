@@ -5,6 +5,7 @@ import WhyUs from "@components/Whyus";
 import Services from "@components/Services";
 import { CTA } from "@components/CTA";
 import ContactForm from "@components/Contact";
+import ValueProposition from "@components/ValueProposition";
 ---
 <MainLayout>
   {/* Hero Section */}
@@ -13,8 +14,13 @@ import ContactForm from "@components/Contact";
   </section>
 
   {/* Why Us Section */}
-  <section id="why-us" class=" h-screen w-full overflow-hidden bg-primary-500 flex items-center justify-center relative">
-    <WhyUs client:only="react" />
+  <section id="why-us" >
+    <div class="hidden md:flex h-screen w-full overflow-hidden bg-primary-500  items-center justify-center relative">
+      <WhyUs client:only="react" />
+    </div>
+    <div class="md:hidden py-24 block h-full bg-primary-500  relative">
+        <ValueProposition />
+    </div>
   </section>
   {/* Services Section */}
   <section  class="w-full">

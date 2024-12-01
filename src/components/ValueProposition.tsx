@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const ValueProposition: React.FC = () => {
     return (
-        <div className="max-w-lg mx-auto">
+        <div className=" max-w-lg md:max-w-7xl  mx-auto">
             {/* Heading */}
             <div className="text-center mb-12">
                 <h2 className="text-4xl font-bold uppercase text-accent-300">Why Choose Elegant Software?</h2>

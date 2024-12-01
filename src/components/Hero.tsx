@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
 
         {/* Text Content */}
         <Parallax translateY={[0, 0]}>
-          <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
+          <div className="relative z-10 flex flex-col items-start justify-center text-center px-6 md:px-12 lg:px-20 max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
               Software <span className="text-primary-500">Reimagined</span>
             </h1>

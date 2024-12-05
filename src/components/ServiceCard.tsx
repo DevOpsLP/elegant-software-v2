@@ -1,15 +1,21 @@
 import React from 'react'
+
 // Define types for the service card props
 interface ServiceCardProps {
     title: string;
     description: string;
     features: string[];
+    image: ServiceImage;
   }
-  
-  // Service Card Component
-export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features }) => (
+interface ServiceImage{
+  name: string;
+  url: string
+}
+
+// Service Card Component
+export const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, features, image }) => (
     <div className=" bg-primary-900 shadow-lg rounded-lg overflow-hidden transform hover:scale-105 transition duration-300">
-      <img src="assets/coding-on-laptop.jpg" alt="Image" />
+      <img src={`${import.meta.env.STRAPI_URL}${image.url}`} alt="Image" />
       <div className="p-6 ">
         <h3 className="text-2xl font-semibold text-accent-400 mb-4">{title}</h3>
         <p className="text-slate-100 mb-4">{description}</p>

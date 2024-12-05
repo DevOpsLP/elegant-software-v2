@@ -1,28 +1,36 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Hero from "../components/Hero";
-import WhyUs from "@components/Whyus";
+import Products from "../components/ProductComponent";
 import Services from "@components/Services";
 import { CTA } from "@components/CTA";
 import ContactForm from "@components/Contact";
 import ValueProposition from "@components/ValueProposition";
+import { query } from "src/utils/strapi";
+const data = await query(
+  "homepage-v2?populate[0]=Hero&populate[1]=ValueProposition.svg1&populate[2]=ValueProposition.svg2&populate[3]=ValueProposition.svg3&populate[4]=ValueProposition.svg4&populate[5]=TabItems&populate[6]=Products.thumbnail&populate[7]=cta&populate[8]=Services.image"
+);
+console.log(data.data)
 ---
 <MainLayout>
   {/* Hero Section */}
   <section id="home" class=" h-screen w-full">
-    <Hero client:only="react" />
+    <Hero hero={data.data.Hero} client:only="react" />
   </section>
 
   {/* Why Us Section */}
   <section id="why-us" class="relative  h-full py-16 bg-primary-500 flex items-center justify-center overflow-hidden" >
-        <ValueProposition />
+      <ValueProposition  valueProposition={data.data.ValueProposition} />
   </section>
   {/* Services Section */}
   <section  class="w-full">
-    <CTA />
+    <CTA cta={data.data.cta} />
   </section>
-  <section id="services" class="relative  min-h-screen py-16 bg-primary-500 flex items-center justify-center overflow-hidden">
-    <Services />
+  <section id="services" class="relative  min-h-screen py-16 px-6 bg-primary-500 flex items-center justify-center overflow-hidden">
+    <Services services={data.data.Services} />
+  </section>
+  <section class="min-h-screen bg-primary-500 relative px-6">
+    <Products tabItems={data.data.TabItems} products={data.data.Products} client:idle />
   </section>
   
   {/* Contact Section */}

@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out bg-slate-100 bg-opacity-30 shadow-md ${isVisible ? "translate-y-0" : "-translate-y-full"
+      className={`fixed top-0 left-0 w-full z-50 transition-transform duration-300 ease-in-out bg-primary-100  shadow-md ${isVisible ? "translate-y-0" : "-translate-y-full"
         }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-4 flex justify-between items-center">

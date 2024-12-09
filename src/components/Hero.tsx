@@ -4,7 +4,7 @@ import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 
 interface Hero {
   title: string;
-  subtitle: string;
+  sub_title: string;
 }
 
 interface HeroProps {
@@ -29,7 +29,7 @@ const Hero: React.FC<HeroProps> = ({ hero }) => {
               {firstHalf} <span className="text-primary-500">{secondHalf}</span>
             </h1>
             <p className="mt-4 text-lg md:text-xl text-gray-600">
-              {hero.subtitle}
+              {hero.sub_title}
             </p>
             <div className="mt-6">
               <a
